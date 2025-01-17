@@ -1,8 +1,14 @@
+'use client'
+
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientBg";
 import GridGlobe from "./GridGlobe";
 import Lottie from "react-lottie";
+import animationData from '@/data/confetti.json';
+import { useState } from "react";
 import MagicButton from "./MagicButton";
+import { IoCopyOutline } from 'react-icons/io5';
+
 
 
 export const BentoGrid = ({
@@ -45,10 +51,17 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
+
+  const [copied, setCopied] = useState(false)
+
+  const handleCopy = () =>{
+    navigator.clipboard.writeText('jasirahsanpv40@gmail.com')
+  }
+
   return (
     <div
       className={cn(
-        "row-span-1 rounded-3xl relative overflow-hidden rounded-3xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4",
+        "row-span-1 relative overflow-hidden rounded-3xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4",
         className
       )}
       style={{
@@ -57,7 +70,7 @@ export const BentoGridItem = ({
       }}
     >
 
-        <div className={`${id === 6} && 'flex justify-center h-full' `} >
+        <div className={`${id === 6 && 'flex justify-center'} h-full `} >
             <div className="w-full h-full absolute">
                 {img && (
                     <img 
@@ -138,25 +151,29 @@ export const BentoGridItem = ({
 
           {id === 6 && (
             <div className="mt-5 relative">
-              {/* button border magic from tailwind css buttons  */}
-              {/* add rounded-md h-8 md:h-8, remove rounded-full */}
-              {/* remove focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 */}
-              {/* add handleCopy() for the copy the text */}
               <div
-                className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"
+                className={`absolute -bottom-5 right-0
                   }`}
               >
-                {/* <img src="/confetti.gif" alt="confetti" /> */}
-                <Lottie options={defaultOptions} height={200} width={400} />
+                <Lottie options={{
+                  loop: copied,
+                  autoplay: copied,
+                  animationData,
+                  rendererSettings:{
+                    preserveAspectRatio:'xMidYMid slice'
+                  }
+                }} />
+               
               </div>
 
-              <MagicButton
-                title={copied ? "Email is Copied!" : "Copy my email address"}
-                icon={<IoCopyOutline />}
-                position="left"
-                handleClick={handleCopy}
-                otherClasses="!bg-[#161A31]"
-              />
+                <MagicButton
+                  title= {copied ? 'Email copied' : 'Copy my email'}
+                  icon={<IoCopyOutline />}
+                  position="left"
+                  otherClasses="!bg-[#161a31"
+                  handleClick={handleCopy}
+                />
+            
             </div>
           )}
 
