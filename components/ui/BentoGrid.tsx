@@ -1,8 +1,8 @@
 'use client'
 
+import dynamic from 'next/dynamic';
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientBg";
-import GridGlobe from "./GridGlobe";
 import Lottie from "react-lottie";
 import animationData from '@/data/confetti.json';
 import { useState } from "react";
@@ -10,6 +10,7 @@ import MagicButton from "./MagicButton";
 import { IoCopyOutline } from 'react-icons/io5';
 
 
+const Lottie = dynamic(() => import('react-lottie'), { ssr: false });
 
 export const BentoGrid = ({
   className,
@@ -56,6 +57,8 @@ export const BentoGridItem = ({
 
   const handleCopy = () =>{
     navigator.clipboard.writeText('jasirahsanpv40@gmail.com')
+
+    setCopied(true)
   }
 
   return (
