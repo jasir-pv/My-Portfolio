@@ -8,7 +8,7 @@ import animationData from '@/data/confetti.json';
 import { useState } from "react";
 import MagicButton from "./MagicButton";
 import { IoCopyOutline } from 'react-icons/io5';
-import { WorldMapDemo } from './Map';
+
 
 
 const Lottie = dynamic(() => import('react-lottie'), { ssr: false });
@@ -86,15 +86,17 @@ export const BentoGridItem = ({
                 )}
             </div>
 
+
+
             <div
-          className={`absolute right-0 -bottom-5 ${id === 5 && "w-full opacity-80"
+          className={`absolute right-0 -bottom-5 ${id === 5 && "w-full opacity-70 "
             } `}
         >
           {spareImg && (
             <img
               src={spareImg}
               alt={spareImg}
-              //   width={220}
+
               className="object-cover object-center w-full h-full"
             />
           )}
