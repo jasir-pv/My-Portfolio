@@ -5,14 +5,15 @@ import { FaLocationArrow } from 'react-icons/fa'
 
 const RecentProjects = () => {
   return (
-    <div className='py-20' id='projects'>
+    <div className='py-20 ' id='projects'>
+      <hr  className=' mb-24'/>
       <h1 className='heading'>
         A Small selection of {''}
         <span className='text-purple'>recent Projects</span>
       </h1>
 
       <div className="flex flex-wrap items-center justify-center 
-      p-4 gap-x-24 gap-y-8 mt-10"> 
+      p-4 gap-x-24 gap-y-8 mt-2"> 
           {projects.map(( {id, title, des, img, iconLists, link})=>(
             <div key={id} 
             className='sm:h-[41rem] h-[32rem] lg:min-h[32.5rem] flex items-center 

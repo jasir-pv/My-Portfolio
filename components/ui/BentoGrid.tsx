@@ -20,17 +20,18 @@ export const BentoGrid = ({
   className?: string;
   children?: React.ReactNode;
 }) => {
-  return (
-    <div
-      className={cn(
-        "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-7 gap-4 lg:gap-8 mx-auto",
-        className
-      )}
-    >
-      {children}
-    </div>
-  );
-};
+      return (
+        <div
+          className={cn(
+            // change gap-4 to gap-8, change grid-cols-3 to grid-cols-5, remove md:auto-rows-[18rem], add responsive code
+            "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-7 gap-4 lg:gap-6 mx-auto",
+            className
+          )}
+        >
+          {children}
+        </div>
+      );
+    };
 
 export const BentoGridItem = ({
   className,
@@ -65,7 +66,7 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "row-span-1 relative overflow-hidden rounded-3xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4",
+        "row-span-4 relative overflow-hidden rounded-3xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4",
         className
       )}
       style={{
@@ -85,22 +86,25 @@ export const BentoGridItem = ({
                 )}
             </div>
 
-            <div className={`absolute right-0 -bottom-5
-                ${id === 5 && 'w-full opacity-80' } `}>
-                    {spareImg && (
-                        <img 
-                        src={spareImg} 
-                        alt={spareImg}
-                        className={'object-cover, object-center w-full h-full'} 
-                    />
-                    )}
-            </div>
+            <div
+          className={`absolute right-0 -bottom-5 ${id === 5 && "w-full opacity-80"
+            } `}
+        >
+          {spareImg && (
+            <img
+              src={spareImg}
+              alt={spareImg}
+              //   width={220}
+              className="object-cover object-center w-full h-full"
+            />
+          )}
+        </div>
 
             {id === 6 && (
               <BackgroundGradientAnimation>
-                {/* <div className="absolute z-50 flex 
+                <div className="absolute z-50 flex 
                 items-center justify-center text-white 
-                font-bold"/> */}
+                font-bold"/>
               </BackgroundGradientAnimation>  
             )}
 
@@ -122,13 +126,18 @@ export const BentoGridItem = ({
 
             {/* {id === 2 && <GridGlobe />} */}
             {/* {id === 2 && <WorldMapDemo />} */}
+            {/* {id === 2 && (
+              <div className='overflow-hidden absolute -bottom-1 sm:block   md:none  right-0 flex justify-end' >
+                <img src="/black.png" alt="" className='opacity-50' />
+              </div>
+            )} */}
 
 
             {id === 3 && (
             <div className="flex gap-1 lg:gap-5 w-fit top-2  absolute -right-2 lg:-right-2">
               {/* tech stack lists */}
               <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                {['React.js', 'Next.js', 'TypeScript','MongoDB','NodeJs','Express' ].map((item, i) => (
+                {['React.js', 'Next.js', 'TypeScript','Express' ].map((item, i) => (
                   <span
                     key={i}
                     className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
@@ -141,7 +150,7 @@ export const BentoGridItem = ({
               </div>
               <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
                 <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
-                {['rightLists','jasir', 'react'].map((item, i) => (
+                {['MongoDB','NodeJs','JavaScript'].map((item, i) => (
                   <span
                     key={i}
                     className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 

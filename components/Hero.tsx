@@ -26,7 +26,7 @@ const Hero = () => {
 
           <h2 className='uppercase tracking-widest
           text-xs text-center text-blue-100 max-w-80'>
-            Dynamic Web Magic with Next.js
+            🔍 Let’s create something amazing together!
           </h2>
 
           <TextGenerateEffect 
@@ -34,10 +34,15 @@ const Hero = () => {
              words='Transforming concepts into Seamless User Experiences'
           />
 
+          <h3 className='text-center md:tracking-wider 
+             mb-3 text-sm md:text-lg font-bold lg:text-2xl'>
+          👋 Hi, I’m Jasir Ahsan Pv,
+          </h3>
+
           <p className="text-center md:tracking-wider 
-             mb-4 text-sm md:text-lg lg:text-2xl  
+             mb-4 text-sm md:text-lg lg:text-lg  
         ">
-            Hi, I'm Jasir Ahsan Pv, A Frontend Developer
+          A passionate Full-Stack Developer dedicated to building modern, user-friendly, and high-performance web applications.
           </p>
 
           <a href="#about">
