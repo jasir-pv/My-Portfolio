@@ -3,11 +3,11 @@
 import dynamic from 'next/dynamic';
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientBg";
-import Lottie from "react-lottie";
 import animationData from '@/data/confetti.json';
 import { useState } from "react";
 import MagicButton from "./MagicButton";
 import { IoCopyOutline } from 'react-icons/io5';
+import Image from 'next/image';
 
 
 
@@ -33,27 +33,27 @@ export const BentoGrid = ({
       );
     };
 
-export const BentoGridItem = ({
-  className,
-  title,
-  description,
-  id,
-  img,
-  imgClassName,
-  titleClassName,
-  spareImg,
-}: {
-  className?: string;
-  title?: string | React.ReactNode;
-  description?: string | React.ReactNode;
-  header?: React.ReactNode;
-  icon?: React.ReactNode;
-  id?: number;
-  img?: string;
-  imgClassName?: string;
-  titleClassName?: string;
-  spareImg?: string;
-}) => {
+    export const BentoGridItem = ({
+      className,
+      title,
+      description,
+      id,
+      img,
+      imgClassName,
+      titleClassName,
+      spareImg,
+    }: {
+      className?: string;
+      title?: string | React.ReactNode;
+      description?: string | React.ReactNode;
+      header?: React.ReactNode;
+      icon?: React.ReactNode;
+      id?: number;
+      img?: string;
+      imgClassName?: string;
+      titleClassName?: string;
+      spareImg?: string;
+    }) => {
 
   const [copied, setCopied] = useState(false)
 
@@ -69,20 +69,22 @@ export const BentoGridItem = ({
         "row-span-4 relative overflow-hidden rounded-3xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4",
         className
       )}
-      style={{
-        background: 'rgb(4,7,29)',
-        backgroundColor: "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
-      }}
+          style={{
+              background: "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
+            }}
+
     >
 
-        <div className={`${id === 6 && 'flex justify-center'} h-full `} >
+        <div className={`${id === 6 && 'flex  justify-center'} h-full `} >
             <div className="w-full h-full absolute">
                 {img && (
-                    <img 
-                    src={img} 
-                    alt={img}
-                    className={cn(imgClassName, 'object-cover, object-center')} 
-                    />
+                   <Image 
+                   src={img} 
+                   alt={img} 
+                   className={cn(imgClassName, 'object-cover object-center')}
+                   layout="fill" 
+                   objectFit="cover"
+                 />
                 )}
             </div>
 
@@ -93,12 +95,14 @@ export const BentoGridItem = ({
             } `}
         >
           {spareImg && (
-            <img
-              src={spareImg}
-              alt={spareImg}
-
-              className="object-cover object-center w-full h-full"
-            />
+           <Image
+           src={spareImg}
+           alt={spareImg}
+           layout="responsive" 
+           height={100}
+           objectFit="cover"
+         />
+         
           )}
         </div>
 
@@ -168,7 +172,7 @@ export const BentoGridItem = ({
           {/* 66666666666 */}
 
           {id === 6 && (
-            <div className="mt-5 relative">
+            <div className="mt-5 relative ">
               <div
                 className={`absolute -bottom-5 right-0
                   }`}
