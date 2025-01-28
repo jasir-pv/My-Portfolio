@@ -8,6 +8,7 @@ import animationData from '@/data/confetti.json';
 import { useState } from "react";
 import MagicButton from "./MagicButton";
 import { IoCopyOutline } from 'react-icons/io5';
+import { WorldMapDemo } from './Map';
 
 
 const Lottie = dynamic(() => import('react-lottie'), { ssr: false });
@@ -22,7 +23,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        "grid md:auto-rows-[18rem] grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto ",
+        "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-7 gap-4 lg:gap-8 mx-auto",
         className
       )}
     >
@@ -119,12 +120,14 @@ export const BentoGridItem = ({
             </div>
 
             {/* {id === 2 && <GridGlobe />} */}
+            {id === 2 && <WorldMapDemo />}
+
 
             {id === 3 && (
-            <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
+            <div className="flex gap-1 lg:gap-5 w-fit top-2  absolute -right-2 lg:-right-2">
               {/* tech stack lists */}
               <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                {['React.js', 'Next.js', 'TypeScript' ].map((item, i) => (
+                {['React.js', 'Next.js', 'TypeScript','MongoDB','NodeJs','Express' ].map((item, i) => (
                   <span
                     key={i}
                     className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
@@ -137,7 +140,7 @@ export const BentoGridItem = ({
               </div>
               <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
                 <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
-                {['rightLists'].map((item, i) => (
+                {['rightLists','jasir', 'react'].map((item, i) => (
                   <span
                     key={i}
                     className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
