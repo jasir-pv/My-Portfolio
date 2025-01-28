@@ -1,7 +1,6 @@
 export const navItems = [
     { name: "About", link: "#about" },
     { name: "Projects", link: "#projects" },
-    { name: "Testimonials", link: "#testimonials" },
     { name: "Contact", link: "#contact" },
   ];
   
@@ -10,7 +9,7 @@ export const navItems = [
       id: 1,
       title: "I prioritize client collaboration, fostering open communication ",
       description: "",
-      className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[80vh]",
+      className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[70vh]",
       imgClassName: "w-full h-full",
       titleClassName: "justify-end",
       img: "/b1.svg",
@@ -68,6 +67,8 @@ export const navItems = [
       spareImg: "",
     },
   ];
+
+  // Projectssssssssssssssssssssss
   
   export const projects = [
     {
@@ -75,7 +76,7 @@ export const navItems = [
       title: "Slide (Many-Chat clone) - Instagram Automation App",
       des: "🔹 Built an automation tool integrated with Instagram API for seamless messaging automation.🔹 Enhances customer engagement through smart chatbot features.",
       img: "/manychat.png",
-      iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg",],
+      iconLists: ["/next.svg", "/tail.svg", "/ts.svg", ],
       link: "https://github.com/jasir-pv/Slide---many-chat-clone",
     },
     {
