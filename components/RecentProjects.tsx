@@ -17,23 +17,23 @@ const RecentProjects = () => {
       p-4 gap-x-24 gap-y-8 mt-2"> 
           {projects.map(( {id, title, des, img, iconLists, link})=>(
             <div key={id} 
-            className='sm:h-[41rem] h-[32rem] lg:min-h[32.5rem] flex items-center 
-            justify-center sm:w-[570px] w-[80vw]'>
+            className='lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]'>
               <PinContainer title='Visit here' href={link}>
-                <div className=' relative flex items-center justify-center
-                sm:w-[570px] w-[80vw] overflow-hidden h-[30vh] sm:h-[40vh] mb-10'>
+                <div className=' relative flex items-center justify-center 
+                sm:w-96 w-[80vw] overflow-hidden h-[18vh] lg:h-[28vh] md:h-[28vh] mb-10'>
 
                   <div className='relative w-full h-full overflow-hidden
                   lg:rounded-3xl bg-[#13162d]'>
                     <Image src="/bg.png"
                      alt="bg-png"
                      width={1920} 
-                     height={1080}  />
+                     height={1080} 
+                     className='sm:w-full sm:h-fit ' />
                   </div>
                   <Image 
                    src={img}
                    alt={title} 
-                   className='z-10 absolute bottom-0'
+                   className='z-10 absolute bottom-0 h-auto'
                    fill />
 
                 </div>

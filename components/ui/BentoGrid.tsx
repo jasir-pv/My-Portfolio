@@ -91,7 +91,7 @@ export const BentoGrid = ({
 
 
             <div
-          className={`absolute right-0 -bottom-5 ${id === 5 && "w-full opacity-70 "
+          className={`absolute right-0 -bottom-5  ${id === 5 && "w-full opacity-70 "
             } `}
         >
           {spareImg && (
@@ -99,8 +99,8 @@ export const BentoGrid = ({
            src={spareImg}
            alt={spareImg}
            layout="responsive" 
-           height={100}
-           objectFit="cover"
+           height={80}
+          
          />
          
           )}
