@@ -46,7 +46,7 @@ const Hero = () => {
           A passionate Full-Stack Developer dedicated to building modern, user-friendly, and high-performance web applications.
           </p>
 
-          <div className='flex  gap-4 sm:flex-col'>
+          <div className='flex gap-4'>
           <a href="#about">
                 <MagicButton 
                 title="Show my work"
