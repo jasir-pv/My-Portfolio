@@ -23,7 +23,7 @@ export const BentoGrid = ({
       return (
         <div
           className={cn(
-            // change gap-4 to gap-8, change grid-cols-3 to grid-cols-5, remove md:auto-rows-[18rem], add responsive code
+
             "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-7 gap-4 lg:gap-6 mx-auto",
             className
           )}
@@ -91,7 +91,7 @@ export const BentoGrid = ({
 
 
             <div
-          className={`absolute right-0 -bottom-5  ${id === 5 && "w-full opacity-70 "
+          className={`absolute right-0  -bottom-5  ${id === 5 && "w-full opacity-60 "
             } `}
         >
           {spareImg && (
@@ -99,8 +99,7 @@ export const BentoGrid = ({
            src={spareImg}
            alt={spareImg}
            layout="responsive" 
-           height={80}
-          
+           height={80}          
          />
          
           )}
@@ -185,11 +184,11 @@ export const BentoGrid = ({
                     preserveAspectRatio:'xMidYMid slice'
                   }
                 }} />
-               
               </div>
+               
 
                 <MagicButton
-                  title= {copied ? 'Email copied' : 'Copy my email'}
+                  title= {copied ? 'Email copied' : 'Copy email'}
                   icon={<IoCopyOutline />}
                   position="left"
                   otherClasses="!bg-[#161a31"

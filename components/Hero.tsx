@@ -3,6 +3,7 @@ import { Spotlight } from './ui/Spotlight'
 import { TextGenerateEffect } from './ui/TextGenerateEffect'
 import MagicButton from './ui/MagicButton'
 import { FaLocationArrow } from 'react-icons/fa'
+import Link from 'next/link'
 
 const Hero = () => {
   return (
@@ -45,6 +46,7 @@ const Hero = () => {
           A passionate Full-Stack Developer dedicated to building modern, user-friendly, and high-performance web applications.
           </p>
 
+          <div className='flex  gap-4 sm:flex-col'>
           <a href="#about">
                 <MagicButton 
                 title="Show my work"
@@ -52,6 +54,23 @@ const Hero = () => {
                 position='right'
                 />
           </a>
+
+          <Link
+            href='/jasir_ahsan_resume.pdf'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+          <MagicButton 
+                title="Download My Resume"
+                icon ={<FaLocationArrow />}
+                position='right'
+                />
+          </Link>
+
+          </div>
+
+
+
         </div>
       </div>
     
